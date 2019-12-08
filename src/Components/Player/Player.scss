@@ -1,0 +1,55 @@
+.playerContainer {
+    position: relative;
+    width: 45%;
+    margin: 1.75% 0% 0% 2%;
+    float: left;
+    // border: 1px solid;
+    height: 25%;
+    left: 2%;
+    font-weight: 600;
+}
+
+.playerAV {
+    position: relative;
+    width: 15%;
+    height: 100%;
+    margin: 0%;
+    display: inline-block;
+    float: left;
+}
+
+.playerNameContainer {
+    position: relative;
+    margin: 0%;
+    width: 85%;
+    left: 15%;
+    height: 50%;
+    background-color: #FFECE0;
+}
+
+.playerName {
+    position: absolute;
+    height: 100%;
+    left: 40%;
+    transform: translate(-40%, 0%);
+    font-size: 1.5em;
+    letter-spacing: .1em;
+}
+
+.playerHealthContainer {
+    position: relative;
+    left: 15%;
+    width: 85%;
+    margin: 0%;
+    background-color:#1ACC00;
+    height: 50%;
+}
+
+.playerHealth {
+    position: absolute;
+    height: 100%;
+    left: 40%;
+    transform: translate(-40%, 0%);
+    font-size: 1.5em;
+    color: black;
+}
