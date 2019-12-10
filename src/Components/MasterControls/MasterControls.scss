@@ -1,0 +1,20 @@
+.masterViewContainer {
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    border: 3px solid;
+    left: 10%;
+    top: 5%;
+}
+
+.TitleContainer {
+    position: relative;
+    width: 100%;
+    border-bottom: black 1px solid;
+    text-align: center;
+    background-color: darkgrey;
+}
+
+.Title {
+    font-size: 2rem;
+}

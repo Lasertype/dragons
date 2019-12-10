@@ -3,7 +3,7 @@ import "./GameBar.scss";
 import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 
-const GameBar = () => {
+const GameBar = (playerList) => {
     return (
         <div className="gameBarContainer">
             <div className="darkOverlay"></div>
@@ -13,7 +13,9 @@ const GameBar = () => {
             </div>
             <div className="partyContainer">
                 <div className="partyArea">
-                    <Player />
+                    <Player 
+                        playerList={playerList}
+                    />
                 </div>
             </div>
         </div>
