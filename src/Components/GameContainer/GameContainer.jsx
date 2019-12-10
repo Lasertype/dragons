@@ -7,7 +7,7 @@ const GameContainer = () => {
         <React.Fragment>
             <div className="masterGameContainer"></div>
             <GameBar />
-        </React.Fragment />
+        </React.Fragment>
     )
 }
 
