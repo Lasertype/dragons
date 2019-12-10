@@ -11,8 +11,18 @@ const App = () => {
   return (
     <Router>
         <Switch>
-          <Route path="/game" exact render={props => <GameContainer {...props} />}/>
-          <Route path="/master" exact render={props => <MasterControls {...props} />}/>
+          <Route 
+            path="/game" 
+            exact 
+<!--             render={props => <GameContainer {...props} />} -->
+            component={GameContainer}
+          />
+          <Route 
+            path="/master" 
+            exact 
+<!--             render={props => <MasterControls {...props} />} -->
+            component={MasterControls}
+          />
         </Switch>
     </Router>
   );
