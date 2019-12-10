@@ -13,7 +13,6 @@ const App = () => {
         <Switch>
           <Route path="/game" exact render={props => <GameContainer {...props} />}/>
           <Route path="/master" exact render={props => <MasterControls {...props} />}/>
-          </Route>
         </Switch>
     </Router>
   );
