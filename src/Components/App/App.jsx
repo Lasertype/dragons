@@ -15,7 +15,7 @@ const App = () => {
             path="/game" 
             exact 
 /* render={props => <GameContainer {...props} />} */
-            component={GameContainer, GameBar}
+            component={GameContainer}
           />
           <Route 
             path="/master" 
