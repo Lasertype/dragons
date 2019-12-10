@@ -4,8 +4,10 @@ import GameBar from "../../GameBar/GameBar.jsx";
 
 const GameContainer = () => {
     return (
-        <div className="masterGameContainer"></div>
-        <GameBar />
+        <React.Fragment>
+            <div className="masterGameContainer"></div>
+            <GameBar />
+        </React.Fragment />
     )
 }
 
