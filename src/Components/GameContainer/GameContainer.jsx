@@ -1,6 +1,6 @@
 import React from 'react';
 import "./GameContainer.scss";
-import GameBar from "../../GameBar/GameBar.jsx";
+import GameBar from "../GameBar/GameBar.jsx";
 
 const GameContainer = () => {
     return (
