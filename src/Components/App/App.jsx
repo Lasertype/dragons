@@ -9,8 +9,6 @@ const App = () => {
   const [players, setPlayers] = useState(['ffe', 'dd']);
 
   return (
-    <div>
-    <button onClick={(() => {console.log('app players: ', players)})}></button>
     <Router>
         <Switch>
           <Route path="/game">
@@ -27,7 +25,6 @@ const App = () => {
           </Route>
         </Switch>
     </Router>
-  </div>
   );
 }
 
