@@ -34,7 +34,8 @@ const Player = ({playerList}) => {
     };
 
     return (
-        <button onClick={fuseEffect}></button>
+        <div>player area</div>
+        // <button onClick={fuseEffect}></button>
     )
 }
 
