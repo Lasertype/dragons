@@ -13,17 +13,18 @@ const App = () => {
         <Switch>
           <Route 
             path="/game" 
+            name="game"
             exact 
-/* render={props => <GameContainer {...props} />} */
             component={GameContainer}
           />
           <Route 
             path="/master" 
+            name="master"
             exact 
-/* render={props => <MasterControls {...props} />} */
             component={MasterControls}
           />
         </Switch>
+        <Redirect exact from="/" to="game" />
     </Router>
   );
 }
