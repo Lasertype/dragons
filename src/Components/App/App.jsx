@@ -4,6 +4,7 @@ import './App.scss';
 import GameContainer from "../GameContainer/GameContainer.jsx";
 
 const App = () => {
+  // new clone test
   return (
     <Router>
         <Switch>
