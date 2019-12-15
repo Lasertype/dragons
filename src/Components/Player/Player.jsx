@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import "./Player.scss";
+import av from "../psy.png";
 
 const Player = ({players}) => {
     useEffect(() => {
@@ -11,7 +12,7 @@ const Player = ({players}) => {
         {players.map((element, index) => {
             return (
                 <div key={index} className="playerContainer">
-                    <img className="playerAV" src={element.av} alt="player avatar"/>
+                    <img className="playerAV" src={av} alt="player avatar"/>
                     <div className="playerNameContainer">
                         <div className="playerName">{element.name}</div>
                     </div>

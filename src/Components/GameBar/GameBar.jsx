@@ -4,49 +4,41 @@ import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 import av from "../psy.png";
 
-const GameBar = () => {
-    const [players, setPlayers] = useState([
-        {name: 'Palafox', av: av, hp: '100'}, 
-        {name: 'Yissic', av: av, hp: '100'},
-        {name: 'Tuel', av: av, hp: '100'},
-        {name: 'Yelru', av: av, hp: '100'},
-        {name: 'Kaigon', av: av, hp: '100'},
-    ]);
-
-    useEffect(() => {
-        console.log('gamebar useeffect ran');
-    }, [players]);
-
+const GameBar = ({modal, setModal, players}) => {
     const [newPlayerNameString, setNewPlayerNameString] = useState(null);
 
-    const setNewPlayer = nameString => {
-        let playerArray = players;
-        let newPlayer = {name: nameString, av: av, hp: '100'}
-        playerArray.push(newPlayer);
-        setPlayers(playerArray);
-        console.log(players);
-    };
+    // const setNewPlayer = nameString => {
+    //     let playerArray = players;
+    //     let newPlayer = {name: nameString, hp: '100'}
+    //     playerArray.push(newPlayer);
+    //     setPlayers(playerArray);
+    //     console.log(players);
+    // };
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        setNewPlayer(newPlayerNameString);
-    };
+    // const handleSubmit = e => {
+    //     e.preventDefault();
+    //     setNewPlayer(newPlayerNameString);
+    // };
 
-    const handleInput = e => {
-        console.log(newPlayerNameString);
-        setNewPlayerNameString(e.target.value);
-    };
+    // const handleInput = e => {
+    //     console.log(newPlayerNameString);
+    //     setNewPlayerNameString(e.target.value);
+    // };
+
+    const toggleModal = () => {
+        setModal(!modal);
+    }
 
     return (
         <div className="gameBarContainer">
             <div className="darkOverlay"></div>
             <div className="enemyContainer">
-                <form action="submit" onSubmit={handleSubmit}>
+                {/* <form action="submit" onSubmit={handleSubmit}>
                     <input onChange={handleInput} type="text"></input>
                     <input type="submit"/>
-                </form>
+                </form> */}
             </div>
-            <div className="titleContainer">
+            <div className="titleContainer" onClick={toggleModal} >
                 <img className="logo" src={logo} alt="logo"/>
             </div>
             <div className="partyContainer">
