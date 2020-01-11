@@ -1,9 +1,5 @@
-.modal {
-
-}
-
 .overlay {
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     left: 0;
     position: fixed;
@@ -12,13 +8,27 @@
 
 }
 
+.partyModal {
+    border-radius: 8px;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    outline: none;
+}
+
 .playerCreationContainer {
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
     position: relative;
-    // border: 1px solid red;
+    border-radius: 8px;
     padding: 15px;
-    left: 2%;
     background-image: url('../Parchment-Texture-slider-size.jpg');
 }
 
@@ -38,7 +48,7 @@
 
 .playerModalAreaContainer {
     width: 100%;
-    height: 80%;
+    height: 75%;
     // border: 1px solid blue;
     position: relative;
     overflow-y: scroll;
@@ -46,16 +56,17 @@
 }
 
 .playerModalContainer {
-    width: 40%;
-    height: 50%;
+    width: 45%;
+    height: 75%;
     position: relative;
     float: left;
     text-align: left;
     // border: 1px solid orange;
-    margin: 10px 10px 0px 10px;
+    margin: 10px 10px 0px 25px;
     cursor: pointer;
     // padding: 10px 50px 50px 50px;
-    left: 3%;
+    background-color: beige;
+
 
     &:hover {
         outline: 5px solid blue;
@@ -75,14 +86,14 @@
 .playerModalName {
     width: 100%;
     position: relative;
-    font-size: 1.5em;
+    font-size: 2.5em;
     padding: 10px 0px 10px 0px;
     // border: 1px solid rebeccapurple;
 }
 
 .playerModalAVContainer {
-    height: 90%;
-    width: 50%;
+    height: 80%;
+    width: 75%;
     left: 50%;
     transform: translate(-50%, 0%);
     background-color: grey;
@@ -97,7 +108,7 @@
     position: relative;
     text-align: center;
     cursor: pointer;
-    top: 5%;
+    top: 3%;
 }
 
 .addButton {

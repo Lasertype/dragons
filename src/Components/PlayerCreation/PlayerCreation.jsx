@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Styles from "./PlayerCreation.scss";
-import ReactModal from "react-responsive-modal";
+import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modal, setModal, players, setPlayers}) => {
+const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
     // likely to be a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
@@ -40,45 +40,47 @@ const PlayerCreation = ({modal, setModal, players, setPlayers}) => {
 
     const createParty = () => {
         setPlayers(party);
-        setModal(false);
-        console.log('party: ', party);
+        setModalStatus(false);
+    }
+
+    const cancelParty = () => {
+        party = [];
+        setPlayers(party);
+        setModalStatus(false);
     }
 
     return (
         <ReactModal
-        open={modal}
+        isOpen={modalStatus}
         ariaHideApp={false}
-        onClose={()=>{}}
-        contentLabel="Example Modal"
-        classNames={{
-            overlay: Styles.overlay,
-            modal: Styles.successModal,
-          }}
-      >
-        <div className="playerCreationContainer">
-            <div className="playerCreationTitleContainer">
-                <div className="playerCreationTitle">Select Your Party</div>
-            </div>
-            <div className="playerModalAreaContainer">
-                    {playerBank.map((element, id) => {
-                        return (
-                            <div id={element.id} key={id} className={checkForSelected(element.id) ? "selected playerModalContainer" : "playerModalContainer"} onClick={() => selectHero(element)}>
-                                <div className="playerModalNameContainer">
-                                    <div className="playerModalName">{element.name}</div>
+        onAfterClose={()=>{}}
+        overlayClassName={"overlay"}
+        className={"partyModal"}
+        >
+            <div className="playerCreationContainer">
+                <div className="playerCreationTitleContainer">
+                    <div className="playerCreationTitle">Select Your Party</div>
+                </div>
+                <div className="playerModalAreaContainer">
+                        {playerBank.map((element, id) => {
+                            return (
+                                <div id={element.id} key={id} className={checkForSelected(element.id) ? "selected playerModalContainer" : "playerModalContainer"} onClick={() => selectHero(element)}>
+                                    <div className="playerModalNameContainer">
+                                        <div className="playerModalName">{element.name}</div>
+                                    </div>
+                                    <div className="playerModalAVContainer">
+                                        <div className="playerModalAV"></div>
+                                    </div>
+                                    
                                 </div>
-                                <div className="playerModalAVContainer">
-                                    <div className="playerModalAV"></div>
-                                </div>
-                                
-                            </div>
 
-                        )
-                    })}
+                            )
+                        })}
+                </div>
+                <div className="addButtonContainer">
+                    <div onClick={createParty} className="addButton">Let's Go!</div>
+                </div>
             </div>
-            <div className="addButtonContainer">
-                <div onClick={createParty} className="addButton">Add to Party</div>
-            </div>
-        </div>
         </ReactModal>
     )
 }

@@ -4,7 +4,7 @@ import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 import av from "../psy.png";
 
-const GameBar = ({modal, setModal, players, master, setMaster}) => {
+const GameBar = ({players, master, setMaster}) => {
     const [newPlayerNameString, setNewPlayerNameString] = useState(null);
 
     // const setNewPlayer = nameString => {
@@ -25,10 +25,6 @@ const GameBar = ({modal, setModal, players, master, setMaster}) => {
     //     setNewPlayerNameString(e.target.value);
     // };
 
-    const toggleModal = () => {
-        setModal(!modal);
-    }
-
     const incrementMaster = () => {
         const currentMasterValue = master;
         setMaster(currentMasterValue + 1);
@@ -43,8 +39,6 @@ const GameBar = ({modal, setModal, players, master, setMaster}) => {
         <div className="gameBarContainer">
             <div className="darkOverlay"></div>
             <div className="enemyContainer">
-                <div onClick={toggleModal}>Create Your Party</div>
-
                 {/* <form action="submit" onSubmit={handleSubmit}>
                     <input onChange={handleInput} type="text"></input>
                     <input type="submit"/>
