@@ -4,7 +4,7 @@ import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 import av from "../psy.png";
 
-const GameBar = ({modal, setModal, players}) => {
+const GameBar = ({modal, setModal, players, master, setMaster}) => {
     const [newPlayerNameString, setNewPlayerNameString] = useState(null);
 
     // const setNewPlayer = nameString => {
@@ -29,17 +29,30 @@ const GameBar = ({modal, setModal, players}) => {
         setModal(!modal);
     }
 
+    const incrementMaster = () => {
+        const currentMasterValue = master;
+        setMaster(currentMasterValue + 1);
+    }
+
+    const decrementMaster = () => {
+        const currentMasterValue = master;
+        setMaster(currentMasterValue - 1);
+    }
+
     return (
         <div className="gameBarContainer">
             <div className="darkOverlay"></div>
             <div className="enemyContainer">
+                <div onClick={toggleModal}>Create Your Party</div>
+
                 {/* <form action="submit" onSubmit={handleSubmit}>
                     <input onChange={handleInput} type="text"></input>
                     <input type="submit"/>
                 </form> */}
             </div>
-            <div className="titleContainer" onClick={toggleModal} >
-                <img className="logo" src={logo} alt="logo"/>
+            <div className="titleContainer" >
+                <div onClick={decrementMaster}>Prev</div>
+                <img className="logo" src={logo} alt="logo" onClick={incrementMaster}/>
             </div>
             <div className="partyContainer">
                 <div className="partyArea">

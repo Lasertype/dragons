@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Styles from "./PlayerCreation.scss";
-import Modal from "react-modal";
+import ReactModal from "react-responsive-modal";
 import Player from "../Player/Player";
 
 const PlayerCreation = ({modal, setModal, players, setPlayers}) => {
@@ -45,18 +45,15 @@ const PlayerCreation = ({modal, setModal, players, setPlayers}) => {
     }
 
     return (
-        <Modal
-        isOpen={modal}
+        <ReactModal
+        open={modal}
         ariaHideApp={false}
-        // onAfterOpen={}
-        onRequestClose={modal}
-        // style={}
+        onClose={()=>{}}
         contentLabel="Example Modal"
         classNames={{
             overlay: Styles.overlay,
-            modal: Styles.modal
-
-        }}
+            modal: Styles.successModal,
+          }}
       >
         <div className="playerCreationContainer">
             <div className="playerCreationTitleContainer">
@@ -82,7 +79,7 @@ const PlayerCreation = ({modal, setModal, players, setPlayers}) => {
                 <div onClick={createParty} className="addButton">Add to Party</div>
             </div>
         </div>
-        </Modal>
+        </ReactModal>
     )
 }
 
