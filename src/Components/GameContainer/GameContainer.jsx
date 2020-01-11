@@ -5,14 +5,14 @@ import Background from "../Background/Background.jsx";
 import PlayerCreation from '../PlayerCreation/PlayerCreation';
 
 const GameContainer = () => {
-    const [modal, setModal] = useState(false); 
+    const [modalStatus, setModalStatus] = useState(false); 
     const [players, setPlayers] = useState([]);
     const [master, setMaster] = useState(0)
         
     const renderMaster = masterValue => {
     switch (masterValue) {
       case 0:
-        return <Background />;
+        return <Background modalStatus={modalStatus} setModalStatus={setModalStatus}/>;
       case 1:
         return <PlayerCreation />;
       default:
@@ -25,8 +25,8 @@ return (
             <div className="masterRender">
                 {renderMaster(master)}
             </div>
-            <GameBar modal={modal} setModal={setModal} players={players} master={master} setMaster={setMaster}/>
-            <PlayerCreation modal={modal} setModal={setModal} players={players} setPlayers={setPlayers} />
+            <GameBar players={players} master={master} setMaster={setMaster}/>
+            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} players={players} setPlayers={setPlayers} />
             
         </React.Fragment>
     )
