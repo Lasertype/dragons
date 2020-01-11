@@ -4,43 +4,49 @@ import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
 const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
+    const [party, setParty] = useState([]);
+    const [partyIDs, setPartyIDs] = useState([]);
+    const [selectedCharacter, setSelectedCharacter] = useState(false);
+
+    const playerAvatar = React.createRef();
+
     // likely to be a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
-        {id: 2, name: 'Yissic', hp: '100'},
+        {id: 2, name: 'Kaz', hp: '100'},
         {id: 3, name: 'Tuel', hp: '100'},
-        {id: 4, name: 'Yelru', hp: '100'},
+        {id: 4, name: 'Galiban', hp: '100'},
         {id: 5, name: 'Kaigon', hp: '100'},
         {id: 6, name: 'Dudley', hp: '100'},
     ];
 
-    let party = [];
-    let partyIDs = [];
-
     const selectHero = (element) => {
+        // debugger;
         if (party.includes(element)) {
             console.log('out of function');
             return;
         }
 
-        party.push(element);
-        partyIDs.push(element.id);
+        let partyState = party;
+        partyState.push(element);
+        setParty(partyState);
+
+        let partyIDsState = partyIDs;
+        partyIDsState.push(element.id);
+        setPartyIDs(partyIDsState);
+
         console.log("select hero: ", element);
         console.log("party: ", party);
-    }
 
-    const checkForSelected = (id) => {
-        console.log('party ids: ', id, partyIDs);
-
-        if (partyIDs.includes(id.id)){
-            console.log('spa');
-            return true;
+        if (partyIDs.includes(element.id)){
+            
         }
+
     }
 
     const createParty = () => {
         setPlayers(party);
-        setModalStatus(false);
+        setModalStatus(false);      
     }
 
     const cancelParty = () => {
@@ -61,10 +67,17 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
                 <div className="playerCreationTitleContainer">
                     <div className="playerCreationTitle">Welcome, Adventurers!</div>
                 </div>
+                {/* <div className="topSpacer"></div> */}
                 <div className="playerModalAreaContainer">
                         {playerBank.map((element, id) => {
                             return (
-                                <div id={element.id} key={id} className={checkForSelected(element.id) ? "selected playerModalContainer" : "playerModalContainer"} onClick={() => selectHero(element)}>
+                                <div
+                                    id={element.id} 
+                                    key={element.id} 
+                                    className={"playerModalContainer"} 
+                                    onClick={() => selectHero(element)}
+                                    ref={playerAvatar}
+                                >
                                     <div className="playerModalNameContainer">
                                         <div className="playerModalName">{element.name}</div>
                                     </div>
@@ -73,10 +86,11 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
                                     </div>
                                     
                                 </div>
-
                             )
                         })}
+                        <div className="bottomSpacer"></div>
                 </div>
+                {/* <div className="bottomSpacer"></div> */}
                 <div className="addButtonContainer">
                     <div onClick={createParty} className="addButton">Let's Go!</div>
                 </div>

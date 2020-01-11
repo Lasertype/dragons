@@ -5,14 +5,13 @@
     position: fixed;
     right: 0;
     top: 0;
-
 }
 
 .partyModal {
     border-radius: 8px;
     // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01);
     display: flex;
-    height: 600px;
+    height: 650px;
     justify-content: center;
     left: 50%;
     overflow: hidden;
@@ -28,7 +27,7 @@
     width: 100%;
     position: relative;
     border-radius: 8px;
-    padding: 15px;
+    padding-bottom: 15px;
     background-image: url('../Parchment-Texture-slider-size.jpg');
 }
 
@@ -36,14 +35,13 @@
     width: 100%;
     position: relative;
     text-align: center;
-    // border: 1px solid green;
-    margin-bottom: 20px;
 }
 
 .playerCreationTitle {
     width: 100%;
     position: relative;
     font-size: 2em;
+    padding: 15px 0px 15px 0px;
 }
 
 .playerModalAreaContainer {
@@ -55,26 +53,52 @@
     overflow-x: hidden;
 }
 
+.topSpacer {
+    position: relative;
+    height: 30px;
+}
+
+.bottomSpacer {
+    position: relative;
+    height: 0px;
+    bottom: 0;
+    width: 100%;
+    display: inline-block;
+}
+
 .playerModalContainer {
-    width: 45%;
-    height: 75%;
+    width: 40%;
+    height: 70%;
     position: relative;
     float: left;
     text-align: left;
+    border-radius: 8px;
     // border: 1px solid orange;
-    margin: 10px 10px 0px 25px;
+    margin: 10px 10px 20px 25px;
     cursor: pointer;
     // padding: 10px 50px 50px 50px;
     // background-color: beige;
 
-
     &:hover {
-        box-shadow: 10px 10px 5px greenyellow;
+        z-index: 1;
+        box-shadow: 0px 0px 50px rgb(0, 140, 255);
     }
 }
 
+.playerModalContainer:nth-child(odd) {
+    margin-left: 80px;
+}
+
+.playerModalContainer:first-child {
+    margin-top: 45px;
+}
+
+.playerModalContainer:nth-child(2) {
+    margin-top: 45px;
+}
+
 .selected {
-    outline: 5px solid green;
+    background-color: rebeccapurple;
 }
 
 .playerModalNameContainer {
@@ -87,7 +111,7 @@
     width: 100%;
     position: relative;
     font-size: 2.5em;
-    padding: 10px 0px 10px 0px;
+    padding-bottom: 8px;
     // border: 1px solid rebeccapurple;
 }
 
@@ -108,7 +132,7 @@
     position: relative;
     text-align: center;
     cursor: pointer;
-    top: 3%;
+    padding-top: 25px
 }
 
 .addButton {
