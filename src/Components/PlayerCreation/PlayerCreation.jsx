@@ -22,8 +22,12 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
 
     const selectHero = (element) => {
         // debugger;
-        if (party.includes(element)) {
+        if (party.some(object => object.name === element.name)) {
             console.log('out of function');
+            return;
+        }
+
+        if (players.some(object => object.name === element.name)) {
             return;
         }
 
