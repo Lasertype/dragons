@@ -65,11 +65,11 @@
     margin: 10px 10px 0px 25px;
     cursor: pointer;
     // padding: 10px 50px 50px 50px;
-    background-color: beige;
+    // background-color: beige;
 
 
     &:hover {
-        outline: 5px solid blue;
+        box-shadow: 10px 10px 5px greenyellow;
     }
 }
 

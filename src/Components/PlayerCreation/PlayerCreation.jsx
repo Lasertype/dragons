@@ -59,7 +59,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
         >
             <div className="playerCreationContainer">
                 <div className="playerCreationTitleContainer">
-                    <div className="playerCreationTitle">Select Your Party</div>
+                    <div className="playerCreationTitle">Welcome, Adventurers!</div>
                 </div>
                 <div className="playerModalAreaContainer">
                         {playerBank.map((element, id) => {
