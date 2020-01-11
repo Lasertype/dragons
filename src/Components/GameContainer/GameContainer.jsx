@@ -12,7 +12,7 @@ const GameContainer = () => {
     const renderMaster = masterValue => {
     switch (masterValue) {
       case 0:
-        return <Background modalStatus={modalStatus} setModalStatus={setModalStatus}/>;
+        return <Background setPlayers={setPlayers} modalStatus={modalStatus} setModalStatus={setModalStatus}/>;
       case 1:
         return <PlayerCreation />;
       default:
