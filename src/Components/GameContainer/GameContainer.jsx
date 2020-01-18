@@ -7,12 +7,17 @@ import PlayerCreation from '../PlayerCreation/PlayerCreation';
 const GameContainer = () => {
     const [modalStatus, setModalStatus] = useState(false); 
     const [players, setPlayers] = useState([]);
-    const [master, setMaster] = useState(0)
+    const [master, setMaster] = useState(0);
+    const [newPlayerNameString, setNewPlayerNameString] = useState(null);
+    const [party, setParty] = useState([]);
+    const [partyIDs, setPartyIDs] = useState([]);
+    const [selectedCharacter, setSelectedCharacter] = useState(false);
+
         
     const renderMaster = masterValue => {
     switch (masterValue) {
       case 0:
-        return <Background setPlayers={setPlayers} modalStatus={modalStatus} setModalStatus={setModalStatus}/>;
+        return <Background setPlayers={setPlayers} modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty}/>;
       case 1:
         return <PlayerCreation />;
       default:
@@ -25,8 +30,8 @@ return (
             <div className="masterRender">
                 {renderMaster(master)}
             </div>
-            <GameBar players={players} master={master} setMaster={setMaster}/>
-            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} players={players} setPlayers={setPlayers} />
+            <GameBar players={players} master={master} setMaster={setMaster} newPlayerNameString={newPlayerNameString} setNewPlayerNameString={setNewPlayerNameString}/>
+            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} players={players} setPlayers={setPlayers} party={party} setParty={setParty} partyIDs={partyIDs} setPartyIDs={setPartyIDs} selectedCharacter={selectedCharacter} setSelectedCharacter={setSelectedCharacter}/>
             
         </React.Fragment>
     )
