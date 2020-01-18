@@ -3,11 +3,7 @@ import Styles from "./PlayerCreation.scss";
 import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
-    const [party, setParty] = useState([]);
-    const [partyIDs, setPartyIDs] = useState([]);
-    const [selectedCharacter, setSelectedCharacter] = useState(false);
-
+const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party, setParty, partyIDs, setPartyIDs, selectedCharacter, setSelectedCharacter}) => {
     const playerAvatar = React.createRef();
 
     // likely to be a db player bank get call    
@@ -54,8 +50,8 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
     }
 
     const cancelParty = () => {
-        party = [];
-        setPlayers(party);
+        setParty([]);
+        setPlayers([]);
         setModalStatus(false);
     }
 
@@ -64,6 +60,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers}) => {
         isOpen={modalStatus}
         ariaHideApp={false}
         onAfterClose={()=>{}}
+        onRequestClose={cancelParty}
         overlayClassName={"overlay"}
         className={"partyModal"}
         >

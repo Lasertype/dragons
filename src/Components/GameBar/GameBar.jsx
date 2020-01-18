@@ -4,8 +4,7 @@ import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 import av from "../psy.png";
 
-const GameBar = ({players, master, setMaster}) => {
-    const [newPlayerNameString, setNewPlayerNameString] = useState(null);
+const GameBar = ({players, master, setMaster,newPlayerNameString, setNewPlayerNameString}) => {
 
     // const setNewPlayer = nameString => {
     //     let playerArray = players;
