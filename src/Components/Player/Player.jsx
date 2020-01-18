@@ -2,14 +2,14 @@ import React, {useEffect} from 'react'
 import "./Player.scss";
 import av from "../psy.png";
 
-const Player = ({players}) => {
+const Player = ({party}) => {
     useEffect(() => {
         console.log('player useeffect ran');
-    }, [players]);
+    }, [party]);
 
     return (
         <React.Fragment>
-        {players.map((element, index) => {
+        {party.map((element, index) => {
             return (
                 <div key={index} className="playerContainer">
                     <img className="playerAV" src={av} alt="player avatar"/>

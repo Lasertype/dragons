@@ -3,9 +3,7 @@ import Styles from "./PlayerCreation.scss";
 import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party, setParty, partyIDs, setPartyIDs, selectedCharacter, setSelectedCharacter}) => {
-    const playerAvatar = React.createRef();
-
+const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedHero, setSelectedHero}) => {
     // likely to be a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
@@ -23,35 +21,30 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party
             return;
         }
 
-        if (players.some(object => object.name === element.name)) {
-            return;
+        const newSelectedHero = {};
+
+        if (selectedHero == {}) {
+          newSelectedHero[element.id] = true;
+        } else if (selectedHero[element.id] == true) {
+          newSelectedHero[element.id] = false;
+        } else if (selectedHero[element.id] == false || !selectedHero[element.id]) {
+          newSelectedHero[element.id] = true;
         }
 
-        let partyState = party;
-        partyState.push(element);
-        setParty(partyState);
+        setSelectedHero(newSelectedHero);
 
-        let partyIDsState = partyIDs;
-        partyIDsState.push(element.id);
-        setPartyIDs(partyIDsState);
-
-        console.log("select hero: ", element);
-        console.log("party: ", party);
-
-        if (partyIDs.includes(element.id)){
-            
-        }
-
+        let newPartyState = party;
+        newPartyState.push(element);
+        setParty(newPartyState);
     }
 
     const createParty = () => {
-        setPlayers(party);
+        setParty(party);
         setModalStatus(false);      
     }
 
     const cancelParty = () => {
         setParty([]);
-        setPlayers([]);
         setModalStatus(false);
     }
 
@@ -68,16 +61,14 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party
                 <div className="playerCreationTitleContainer">
                     <div className="playerCreationTitle">Welcome, Adventurers!</div>
                 </div>
-                {/* <div className="topSpacer"></div> */}
                 <div className="playerModalAreaContainer">
-                        {playerBank.map((element, id) => {
+                        {playerBank.map((element, index) => {
                             return (
                                 <div
                                     id={element.id} 
                                     key={element.id} 
-                                    className={"playerModalContainer"} 
+                                    className={`playerModalContainer ${selectedHero[element.id] ? "selected" : ""}`} 
                                     onClick={() => selectHero(element)}
-                                    ref={playerAvatar}
                                 >
                                     <div className="playerModalNameContainer">
                                         <div className="playerModalName">{element.name}</div>
@@ -91,7 +82,6 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party
                         })}
                         <div className="bottomSpacer"></div>
                 </div>
-                {/* <div className="bottomSpacer"></div> */}
                 <div className="addButtonContainer">
                     <div onClick={createParty} className="addButton">Let's Go!</div>
                 </div>
@@ -101,10 +91,3 @@ const PlayerCreation = ({modalStatus, setModalStatus, players, setPlayers, party
 }
 
 export default PlayerCreation;
-
-
-// {name: 'Palafox (3g)', av: av, hp: '100'}, 
-// {name: 'Yissic (5g)', av: av, hp: '100'},
-// {name: 'Tuel', av: av, hp: '100'},
-// {name: 'Yelru', av: av, hp: '100'},
-// {name: 'Kaigon', av: av, hp: '100'},

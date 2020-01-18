@@ -4,26 +4,7 @@ import logo from "../logo_concept.png";
 import Player from "../Player/Player";
 import av from "../psy.png";
 
-const GameBar = ({players, master, setMaster,newPlayerNameString, setNewPlayerNameString}) => {
-
-    // const setNewPlayer = nameString => {
-    //     let playerArray = players;
-    //     let newPlayer = {name: nameString, hp: '100'}
-    //     playerArray.push(newPlayer);
-    //     setPlayers(playerArray);
-    //     console.log(players);
-    // };
-
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     setNewPlayer(newPlayerNameString);
-    // };
-
-    // const handleInput = e => {
-    //     console.log(newPlayerNameString);
-    //     setNewPlayerNameString(e.target.value);
-    // };
-
+const GameBar = ({master, setMaster, party}) => {
     const incrementMaster = () => {
         const currentMasterValue = master;
         setMaster(currentMasterValue + 1);
@@ -36,13 +17,8 @@ const GameBar = ({players, master, setMaster,newPlayerNameString, setNewPlayerNa
 
     return (
         <div className="gameBarContainer">
-            <div className="darkOverlay"></div>
-            <div className="enemyContainer">
-                {/* <form action="submit" onSubmit={handleSubmit}>
-                    <input onChange={handleInput} type="text"></input>
-                    <input type="submit"/>
-                </form> */}
-            </div>
+            <div className="darkOverlay" />
+            <div className="enemyContainer" />
             <div className="titleContainer" >
                 {/* <div onClick={decrementMaster}>Prev</div> */}
                 <img className="logo" src={logo} alt="logo" onClick={incrementMaster}/>
@@ -50,7 +26,7 @@ const GameBar = ({players, master, setMaster,newPlayerNameString, setNewPlayerNa
             <div className="partyContainer">
                 <div className="partyArea">
                     <Player 
-                        players={players}
+                        party={party}
                     />
                 </div>
             </div>
