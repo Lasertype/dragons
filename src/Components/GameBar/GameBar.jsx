@@ -44,7 +44,7 @@ const GameBar = ({players, master, setMaster,newPlayerNameString, setNewPlayerNa
                 </form> */}
             </div>
             <div className="titleContainer" >
-                <div onClick={decrementMaster}>Prev</div>
+                {/* <div onClick={decrementMaster}>Prev</div> */}
                 <img className="logo" src={logo} alt="logo" onClick={incrementMaster}/>
             </div>
             <div className="partyContainer">
