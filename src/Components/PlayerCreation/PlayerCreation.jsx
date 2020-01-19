@@ -3,7 +3,7 @@ import Styles from "./PlayerCreation.scss";
 import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedHero, setSelectedHero, selectedHeroes, setSelectedHeroes}) => {
+const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHeroes, setselectedModalHeroes}) => {
     // likely to be a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
@@ -16,39 +16,35 @@ const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedH
 
     const selectHero = (element) => {
         // debugger;
-        console.log('select hero runs');
-        if (party.some(object => object.name === element.name)) {
-            console.log('out of function');
-            return;
+        const modalHeroes = selectedModalHeroes;
+
+        if (modalHeroes.some(object => object.id === element.id)) {
+            const removeIndex = modalHeroes.map((object) => {return object.id}).indexOf(element.id);
+            modalHeroes.splice(removeIndex, 1);
+        } else {
+            modalHeroes.push(element);
         }
+        
+        const modalHeroesToPush = [].concat(modalHeroes)
+        setselectedModalHeroes(modalHeroesToPush);
+    }
 
-        const newSelectedHero = {};
-
-        if (selectedHero == {}) {
-          newSelectedHero[element.id] = true;
-        } else if (selectedHero[element.id] == true) {
-          newSelectedHero[element.id] = false;
-        } else if (selectedHero[element.id] == false || !selectedHero[element.id]) {
-          newSelectedHero[element.id] = true;
+    const checkForSelected = (element) => {
+        if (selectedModalHeroes.some(object => object.id === element.id)){
+            return true;
         }
-
-        setSelectedHero(newSelectedHero);
-
-        let newPartyState = party;
-        newPartyState.push(element);
-        setSelectedHeroes(newPartyState);
     }
 
     const createParty = () => {
-        setParty(selectedHeroes);
-        setModalStatus(false);
-        setSelectedHero({});      
+        setParty(selectedModalHeroes);
+        setModalStatus(false); 
+        setselectedModalHeroes([]);         
     }
 
     const cancelParty = () => {
         setParty([]);
         setModalStatus(false);
-        setSelectedHero({});      
+        setselectedModalHeroes([]);      
     }
 
     return (
@@ -70,7 +66,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedH
                                 <div
                                     id={element.id} 
                                     key={element.id} 
-                                    className={`playerModalContainer ${selectedHero[element.id] ? "selected" : ""}`} 
+                                    className={`playerModalContainer ${checkForSelected(element) ? "selected noHover" : ""}`} 
                                     onClick={() => selectHero(element)}
                                 >
                                     <div className="playerModalNameContainer">
