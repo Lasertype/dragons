@@ -1,10 +1,9 @@
 import React from 'react';
 import "./Background.scss";
 
-const Background = ({setPlayers, modalStatus, setModalStatus, setParty}) => {
+const Background = ({modalStatus, setModalStatus, setParty}) => {
     const toggleModal = () => {
         setModalStatus(!modalStatus);
-        setPlayers([]);
         setParty([]);
     }
 
