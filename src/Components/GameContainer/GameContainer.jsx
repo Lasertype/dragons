@@ -9,6 +9,7 @@ const GameContainer = () => {
     const [modalStatus, setModalStatus] = useState(false); 
     const [party, setParty] = useState([]);
     const [selectedHero, setSelectedHero] = useState({});
+    const [selectedHeroes, setSelectedHeroes] = useState([]);
 
     const masterRender = masterValue => {
     switch (masterValue) {
@@ -27,7 +28,7 @@ return (
                 {masterRender(master)}
             </div>
             <GameBar master={master} setMaster={setMaster} party={party} />
-            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} party={party} setParty={setParty} selectedHero={selectedHero} setSelectedHero={setSelectedHero}/>
+            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} party={party} setParty={setParty} selectedHero={selectedHero} setSelectedHero={setSelectedHero} selectedHeroes={selectedHeroes} setSelectedHeroes={setSelectedHeroes} />
             
         </React.Fragment>
     )

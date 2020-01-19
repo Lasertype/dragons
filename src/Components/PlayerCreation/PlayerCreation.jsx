@@ -3,7 +3,7 @@ import Styles from "./PlayerCreation.scss";
 import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedHero, setSelectedHero}) => {
+const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedHero, setSelectedHero, selectedHeroes, setSelectedHeroes}) => {
     // likely to be a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
@@ -16,6 +16,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedH
 
     const selectHero = (element) => {
         // debugger;
+        console.log('select hero runs');
         if (party.some(object => object.name === element.name)) {
             console.log('out of function');
             return;
@@ -35,17 +36,19 @@ const PlayerCreation = ({modalStatus, setModalStatus, party, setParty, selectedH
 
         let newPartyState = party;
         newPartyState.push(element);
-        setParty(newPartyState);
+        setSelectedHeroes(newPartyState);
     }
 
     const createParty = () => {
-        setParty(party);
-        setModalStatus(false);      
+        setParty(selectedHeroes);
+        setModalStatus(false);
+        setSelectedHero({});      
     }
 
     const cancelParty = () => {
         setParty([]);
         setModalStatus(false);
+        setSelectedHero({});      
     }
 
     return (
