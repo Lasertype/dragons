@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Background.scss";
+import dmconcept from "../dmconcept.png";
 
 const Background = ({modalStatus, setModalStatus, setParty}) => {
     const toggleModal = () => {
@@ -9,7 +10,7 @@ const Background = ({modalStatus, setModalStatus, setParty}) => {
 
     return (
         <>
-        <img alt="background_image" src="https://www.fodors.com/wp-content/uploads/2019/01/HERO_Alaska_BooksMovies_dreamstime_108778603.jpg"></img>
+        <img alt="background_image" src={dmconcept}></img>
         <div className="party-container" >
             <div className="party-text" onClick={toggleModal}>Start Adventure!</div>
         </div>
