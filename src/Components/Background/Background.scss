@@ -1,9 +1,20 @@
+.gameTitle {
+    text-align: center;
+    background: none;
+    // padding: 10px;
+    font-size: 8em;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 5%;
+}
+
 .party-container {
     position: absolute;
-    top: 15%;
+    top: 75%;
     left: 50%;
-    transform: translate(-50%, -15%);
-    width: 25%;
+    transform: translate(-50%, -75%);
+    width: 15%;
     text-align: center;
 }
 

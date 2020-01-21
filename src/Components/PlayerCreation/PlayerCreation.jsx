@@ -58,7 +58,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHer
         >
             <div className="playerCreationContainer">
                 <div className="playerCreationTitleContainer">
-                    <div className="playerCreationTitle">Welcome, Adventurers!</div>
+                    <div className="playerCreationTitle">Who is Ready for Adventure?</div>
                 </div>
                 <div className="playerModalAreaContainer">
                         {playerBank.map((element, index) => {
@@ -66,13 +66,13 @@ const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHer
                                 <div
                                     id={element.id} 
                                     key={element.id} 
-                                    className={`playerModalContainer ${checkForSelected(element) ? "selected noHover" : ""}`} 
+                                    className="playerModalContainer"
                                     onClick={() => selectHero(element)}
                                 >
                                     <div className="playerModalNameContainer">
                                         <div className="playerModalName">{element.name}</div>
                                     </div>
-                                    <div className="playerModalAVContainer">
+                                    <div className={`playerModalAVContainer ${checkForSelected(element) ? "selected noHover" : ""}`}>
                                         <div className="playerModalAV"></div>
                                     </div>
                                     

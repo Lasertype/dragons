@@ -9,6 +9,7 @@
     position: fixed;
     right: 0;
     top: 0;
+    z-index: 1;
 }
 
 .partyModal {
@@ -20,8 +21,8 @@
     left: 50%;
     overflow: hidden;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 48%;
+    transform: translate(-50%, -48%);
     width: 1000px;
     outline: none;
 }
@@ -32,7 +33,8 @@
     position: relative;
     border-radius: 4px;
     padding-bottom: 15px;
-    background-image: url('../Parchment-Texture-slider-size.jpg');
+    background-color: #a2e6eb
+    // background-image: url('../Parchment-Texture-slider-size.jpg');
 }
 
 .playerCreationTitleContainer {
@@ -44,8 +46,9 @@
 .playerCreationTitle {
     width: 100%;
     position: relative;
-    font-size: 2em;
+    font-size: 2.5em;
     padding: 10px 0px 10px 0px;
+    background-color: #d3edef;
 }
 
 .playerModalAreaContainer {
@@ -80,11 +83,6 @@
     margin: 10px 10px 20px 25px;
     cursor: pointer;
     padding-bottom: 15px;
-
-    &:hover {
-        z-index: 1;
-        box-shadow: 0px 0px 50px rgb(0, 140, 255);
-    }
 }
 
 .playerModalContainer:nth-child(odd) {
@@ -100,7 +98,7 @@
 }
 
 .selected {
-    box-shadow: 0px 0px 50px green;
+    box-shadow: 0px 0px 75px rgb(0, 255, 0);
 }
 
 .playerModalNameContainer {
@@ -125,6 +123,11 @@
     background-color: grey;
     position: relative;
     border-radius: 4px;
+    
+    &:hover {
+        z-index: 1;
+        box-shadow: 0px 0px 75px rgb(0, 140, 255);
+    }
 }
 
 .addButtonContainer {
@@ -135,7 +138,9 @@
     position: relative;
     text-align: center;
     cursor: pointer;
-    padding-top: 20px
+    padding-top: 15px;
+    // background-color: #d3edef;
+    height: 12%;
 }
 
 .addButton {
@@ -148,11 +153,16 @@
     color: white;
     font-size: 1.5em;
     padding: 10px;
+
+    &:hover {
+        z-index: 1;
+        box-shadow: 0px 0px 20px #e2ff00;
+    }
 }
 
 .noHover {
     &:hover {
         z-index: 1;
-        box-shadow: 0px 0px 50px green;
+        box-shadow: 0px 0px 75px rgb(0, 255, 0);
     }
 }
