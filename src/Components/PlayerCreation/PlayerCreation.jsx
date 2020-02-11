@@ -4,7 +4,7 @@ import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
 const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHeroes, setselectedModalHeroes}) => {
-    // likely to be a db player bank get call    
+    // a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
         {id: 2, name: 'Kaz', hp: '100'},
