@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import "./Inn.scss";
 import backdrop from "../innbackdrop.png";
 import LowerThird from "../LowerThird/LowerThird";
+import ma from "../ma.png"; 
 
 const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
     useEffect (() => {
@@ -10,6 +11,7 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
 
     const mapa = () => {
         setOpenLT(true);
+        setLTAvatar(ma);
         setLTText("Ma: WE MISS JUNIOR! JUNIOR!")
     }
     
@@ -33,7 +35,10 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
         setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town.")
     } 
 
-    const removeLT = () => setOpenLT(false);
+    const removeLT = () => {
+        setOpenLT(false);
+        setLTAvatar(null);
+    }
 
     return (
         <>
