@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import "./Player.scss";
-import av from "../psy.png";
+import av from "../Images/psy.png";
 
 const Player = ({party}) => {
     useEffect(() => {

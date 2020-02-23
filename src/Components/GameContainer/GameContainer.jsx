@@ -14,10 +14,20 @@ const GameContainer = () => {
     const [ltText, setLTText] = useState(null);
     const [ltAvatar, setLTAvatar] = useState(null);
 
+    const incrementMaster = () => {
+      const currentMasterValue = master;
+      setMaster(currentMasterValue + 1);
+  }
+
+  const decrementMaster = () => {
+      const currentMasterValue = master;
+      setMaster(currentMasterValue - 1);
+  }
+
     const masterRender = masterValue => {
     switch (masterValue) {
       case 0:
-        return <GameStart modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty}/>;
+        return <GameStart modalStatus={modalStatus} setModalStatus={setModalStatus} party={party} setParty={setParty}/>;
       case 1:
         return <Inn openLT={openLT} setOpenLT={setOpenLT} ltText={ltText} setLTText={setLTText} ltAvatar={ltAvatar} setLTAvatar={setLTAvatar} />;
       default:
@@ -32,9 +42,9 @@ return (
             {masterRender(master)}
           </div>
             <div className="gameBarContainer">
-              <GameBar master={master} setMaster={setMaster} party={party} />
+              <GameBar master={master} setMaster={setMaster} party={party} incrementMaster={incrementMaster} decrementMaster={decrementMaster} />
             </div>
-            <PlayerCreation modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty} selectedModalHeroes={selectedModalHeroes} setselectedModalHeroes={setselectedModalHeroes} />
+            <PlayerCreation setMaster={setMaster} modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty} selectedModalHeroes={selectedModalHeroes} setselectedModalHeroes={setselectedModalHeroes} incrementMaster={incrementMaster} />
             
         </React.Fragment>
     )

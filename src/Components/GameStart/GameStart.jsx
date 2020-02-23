@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./GameStart.scss";
-import dmconcept from "../dmconcept.png";
+import dmconcept from "../../Components/Images/dmconcept.png";
 
-const GameStart = ({modalStatus, setModalStatus, setParty}) => {
+const GameStart = ({modalStatus, setModalStatus, party, setParty}) => {
     const toggleModal = () => {
         setModalStatus(!modalStatus);
         setParty([]);
