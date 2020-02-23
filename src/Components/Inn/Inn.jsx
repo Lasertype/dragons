@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import "./Inn.scss";
-import backdrop from "../innbackdrop.png";
+import inn from "../inn.png";
 import LowerThird from "../LowerThird/LowerThird";
 import ma from "../ma.png"; 
 
@@ -25,11 +25,6 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
         setLTText("Bronwyn: FUCK OFF!!")
     }  
 
-    const constable = () => {
-        setOpenLT(true);
-        setLTText("Constable Bogoff: Do you liek Sponegbob memes?")
-    }  
-
     const barkeep = () => {
         setOpenLT(true);
         setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town.")
@@ -43,11 +38,10 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
     return (
         <>
         { openLT ? (<LowerThird ltText={ltText} ltAvatar={ltAvatar} />) : (null)} 
-        <img alt="backgroundImage" onClick={removeLT} src={backdrop}></img>
+        <img alt="backgroundImage" onClick={removeLT} src={inn}></img>
         <div className="hitbox mapa" onClick={mapa}></div>
         <div className="hitbox farmers" onClick={farmers}></div>
         <div className="hitbox bronwyn" onClick={bronwyn}></div>
-        <div className="hitbox constable" onClick={constable}></div>
         <div className="hitbox barkeep" onClick={barkeep}></div>
         </>
     )
