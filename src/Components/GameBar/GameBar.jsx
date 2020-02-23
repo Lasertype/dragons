@@ -16,21 +16,21 @@ const GameBar = ({master, setMaster, party}) => {
     }
 
     return (
-        <div className="gameBarContainer">
-            <div className="darkOverlay" />
-            <div className="enemyContainer" />
-            <div className="titleContainer" >
-                {/* <div onClick={decrementMaster}>Prev</div> */}
-                <img className="logo" src={logo} alt="logo" onClick={incrementMaster}/>
-            </div>
-            <div className="partyContainer">
-                <div className="partyArea">
-                    <Player 
-                        party={party}
-                    />
-                </div>
+        <>
+        <div className="darkOverlay" />
+        <div className="enemyContainer" />
+        <div className="iconContainer" >
+            <button style={{position: "absolute"}}onClick={decrementMaster}>Prev</button>
+            <img className="logo" src={logo} alt="logo" onClick={incrementMaster}/>
+        </div>
+        <div className="partyContainer">
+            <div className="partyArea">
+                <Player 
+                    party={party}
+                />
             </div>
         </div>
+        </>
     )
 }
 

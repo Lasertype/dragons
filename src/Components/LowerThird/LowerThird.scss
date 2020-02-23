@@ -1,0 +1,43 @@
+.ltContainer {
+    height: 216px;
+    width: 100%;
+    top: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #513200;
+    outline: 10px solid #2f1a00;
+    outline-offset: -10px;
+}
+
+.avPortraitContainer {
+    height: 100%;
+    width: 300px;
+    display: inline-block;
+    position: relative;
+}
+
+.avPortrait {
+    height: 195px;
+    position: relative;
+    width: 195px;
+    left: 50px;
+    top: 10px;
+}
+
+.textContainer {
+    height: 100%;
+    width: 1525px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    left: 50px;
+}
+
+.text {
+    top: 10px;
+    position: relative;
+    font-size: 4em;
+    height: 200px;
+    color: palegoldenrod;;
+}
+

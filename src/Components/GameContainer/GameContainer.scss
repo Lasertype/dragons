@@ -1,6 +1,24 @@
-.masterRender {
-    height: 875px;
-    width: 1920px;
-    /* background-color: blue; */
-    position: relative;
+// .masterRender {
+//     height: 875px;
+//     width: 1920px;
+//     /* background-color: blue; */
+//     position: relative;
+// }
+
+.gameBarContainer {
+    background-color: #513200;
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    top: 80%;
+    outline: 10px solid #2f1a00;
+    outline-offset: -10px;
+}
+
+.encounterContainer {
+    position: absolute;
+    height: 80%;
+    width: 100%;
 }

@@ -75,7 +75,6 @@ const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHer
                                     <div className={`playerModalAVContainer ${checkForSelected(element) ? "selected noHover" : ""}`}>
                                         <div className="playerModalAV"></div>
                                     </div>
-                                    
                                 </div>
                             )
                         })}
