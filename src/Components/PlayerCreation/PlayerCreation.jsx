@@ -39,7 +39,6 @@ const PlayerCreation = ({setMaster, modalStatus, setModalStatus, setParty, selec
         setParty(selectedModalHeroes);
         setModalStatus(false); 
         setselectedModalHeroes([]);
-        incrementMaster();         
     }
 
     const cancelParty = () => {

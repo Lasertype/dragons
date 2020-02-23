@@ -10,62 +10,32 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
     }, [openLT] )
 
     const mapa = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
         setLTAvatar(ma);
-        setLTText("Ma: WE MISS JUNIOR! JUNIOR!")
+        setLTText("Ma: JUNIOR!")
     }
     
     const farmers = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
         setLTText("Farmers: We are Farmers, badumbumbdumbum!")
     }  
 
     const bronwyn = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
-        setLTText("Bronwyn: FUCK OFF!!")
+        setLTText("Bronwyn: Hrmff... You're in over your heads. Go home.")
     }  
 
     const barkeep = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
-        setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town.")
+        setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town. Having a drink?")
     } 
 
     const mouse = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
         setLTText("Mouse: Eep!");
     } 
 
     const cat = () => {
-        if (openLT) {
-            setOpenLT(false);
-            setLTAvatar(null);
-            return;
-        }
         setOpenLT(true);
         setLTText("Cat: I liek memes :3");
     } 
