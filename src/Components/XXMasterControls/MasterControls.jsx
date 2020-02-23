@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import "./MasterControls.scss";
 import ReactModal from "react-modal";
-import av from "../psy.png";
+import av from "../Images/psy.png";
 
 const MasterControls = ({setPlayers, players}) => {
     const [modalOpen, setModalOpen] = useState(false);

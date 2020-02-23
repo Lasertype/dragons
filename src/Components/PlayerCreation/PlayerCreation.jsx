@@ -3,7 +3,7 @@ import Styles from "./PlayerCreation.scss";
 import ReactModal from "react-modal";
 import Player from "../Player/Player";
 
-const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHeroes, setselectedModalHeroes}) => {
+const PlayerCreation = ({setMaster, modalStatus, setModalStatus, setParty, selectedModalHeroes, setselectedModalHeroes, incrementMaster}) => {
     // a db player bank get call    
     const playerBank = [
         {id: 1, name: 'Palafox', hp: '100'}, 
@@ -38,7 +38,8 @@ const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHer
     const createParty = () => {
         setParty(selectedModalHeroes);
         setModalStatus(false); 
-        setselectedModalHeroes([]);         
+        setselectedModalHeroes([]);
+        incrementMaster();         
     }
 
     const cancelParty = () => {
@@ -58,7 +59,7 @@ const PlayerCreation = ({modalStatus, setModalStatus, setParty, selectedModalHer
         >
             <div className="playerCreationContainer">
                 <div className="playerCreationTitleContainer">
-                    <div className="playerCreationTitle">Who is Ready for Adventure?</div>
+                    <div className="playerCreationTitle">Y'alls Brave</div>
                 </div>
                 <div className="playerModalAreaContainer">
                         {playerBank.map((element, index) => {

@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import "./Inn.scss";
-import inn from "../inn.png";
+import inn from "../../Components/Images/inn.png";
 import LowerThird from "../LowerThird/LowerThird";
-import ma from "../ma.png"; 
+import ma from "../../Components/Images/ma.png"; 
 
 const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
     useEffect (() => {
@@ -10,32 +10,62 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
     }, [openLT] )
 
     const mapa = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTAvatar(ma);
         setLTText("Ma: WE MISS JUNIOR! JUNIOR!")
     }
     
     const farmers = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTText("Farmers: We are Farmers, badumbumbdumbum!")
     }  
 
     const bronwyn = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTText("Bronwyn: FUCK OFF!!")
     }  
 
     const barkeep = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town.")
     } 
 
     const mouse = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTText("Mouse: Eep!");
     } 
 
     const cat = () => {
+        if (openLT) {
+            setOpenLT(false);
+            setLTAvatar(null);
+            return;
+        }
         setOpenLT(true);
         setLTText("Cat: I liek memes :3");
     } 
