@@ -30,6 +30,16 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
         setLTText("Barkeep Swanson: Weird folk about. Strange things happening in our quiet town.")
     } 
 
+    const mouse = () => {
+        setOpenLT(true);
+        setLTText("Mouse: Eep!");
+    } 
+
+    const cat = () => {
+        setOpenLT(true);
+        setLTText("Cat: I liek memes :3");
+    } 
+
     const removeLT = () => {
         setOpenLT(false);
         setLTAvatar(null);
@@ -43,6 +53,8 @@ const Inn = ({openLT, setOpenLT, ltText, setLTText, ltAvatar, setLTAvatar}) => {
         <div className="hitbox farmers" onClick={farmers}></div>
         <div className="hitbox bronwyn" onClick={bronwyn}></div>
         <div className="hitbox barkeep" onClick={barkeep}></div>
+        <div className="hitbox mouse" onClick={mouse}></div>
+        <div className="hitbox cat" onClick={cat}></div>
         </>
     )
 }
