@@ -15,15 +15,15 @@ const GameContainer = () => {
     const [ltAvatar, setLTAvatar] = useState(null);
 
     const masterRender = masterValue => {
-    // switch (masterValue) {
-    //   case 0:
-    //     return <GameStart modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty}/>;
-    //   case 1:
-    //     return <Inn />;
-    //   default:
-    //     return <GameBar />;
-    // }
-    return <Inn openLT={openLT} setOpenLT={setOpenLT} ltText={ltText} setLTText={setLTText} ltAvatar={ltAvatar} setLTAvatar={setLTAvatar} />
+    switch (masterValue) {
+      case 0:
+        return <GameStart modalStatus={modalStatus} setModalStatus={setModalStatus} setParty={setParty}/>;
+      case 1:
+        return <Inn openLT={openLT} setOpenLT={setOpenLT} ltText={ltText} setLTText={setLTText} ltAvatar={ltAvatar} setLTAvatar={setLTAvatar} />;
+      default:
+        return <GameBar />;
+    }
+    // return <Inn openLT={openLT} setOpenLT={setOpenLT} ltText={ltText} setLTText={setLTText} ltAvatar={ltAvatar} setLTAvatar={setLTAvatar} />
 }
 
 return (

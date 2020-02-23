@@ -17,11 +17,14 @@
 }
 
 .avPortrait {
-    height: 195px;
+    height: 190px;
     position: relative;
-    width: 195px;
+    width: 190px;
     left: 50px;
-    top: 10px;
+    top: 13px;
+    outline: 10px solid #1d1d1d;
+    outline-offset: -10px;
+    box-shadow: inset 0 0 20px #000000;
 }
 
 .textContainer {
