@@ -1,0 +1,50 @@
+.hitbox {
+    cursor: pointer;
+    border: 1px solid;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+img {
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.mapa {
+    height: 200px;
+    width: 250px;
+    top: 150px;
+    left: 100px
+}
+
+.farmers {
+    height: 300px;
+    width: 425px;
+    top: 100px;
+    left: 675px
+}
+
+.bronwyn {
+    height: 400px;
+    width: 600px;
+    top: 400px;
+    left: 700px
+}
+
+.constable {
+    height: 400px;
+    width: 500px;
+    top: 400px;
+    left: 50px
+}
+
+.barkeep {
+    height: 800px;
+    width: 500px;
+    top: 200px;
+    left: 1410px
+}
