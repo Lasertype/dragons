@@ -1,2 +1,2 @@
-# Dragon's Mountain
+# Dragon Mountain
 Fantasy role-playing game in development
